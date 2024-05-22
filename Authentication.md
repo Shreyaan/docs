@@ -1,11 +1,11 @@
 ---
 title: API Authentication Guide
-description: 'Instructions on how to authenticate API requests using API keys'
+description: "Instructions on how to authenticate API requests using API keys"
 ---
 
 ## Introduction
 
-This guide provides detailed instructions on how to authenticate your requests using API keys for accessing our services. 
+This guide provides detailed instructions on how to authenticate your requests using API keys for accessing our services.
 
 ## Obtaining API Keys
 
@@ -61,7 +61,7 @@ Alternatively, you can use your User ID and API Key separately, especially usefu
 1. Copy your User ID and API Key separately from the API Key Settings Page.
 2. Use `userID` in `username` field and `apiKey` in `password` field
 
-or 
+or
 
 1. Copy your User ID and API Key separately from the API Key Settings Page.
 2. Combine your User ID and API Key in the format `userID:apiKey`.
@@ -72,10 +72,10 @@ or
    Authorization: Basic <base64(userID:apiKey)>
    ```
 
-
 ## Authentication in Our Documentation Site
 
 When prompted for a username and password on our documentation site, use the following:
+
 - **Username:** Your User ID
 - **Password:** Your API Key
 
@@ -101,7 +101,9 @@ Authorization: Basic dXNlcjEyMzprZXk0NTY=
    Authorization: Basic dXNlcjEyMzprZXk0NTY=
    ```
 
-or 
+or
+
+![apikeyexample](imgs/apikeyexample.png)
 
 ## Conclusion
 
