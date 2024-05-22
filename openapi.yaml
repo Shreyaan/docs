@@ -3,7 +3,8 @@ info:
   title: Athena-Backend external
   version: 1.0.0
 servers:
-  - url: http://backend.athenacopilot.ai
+  - url: https://backend.athenacopilot.ai
+  - url: https://45ef-38-183-26-160.ngrok-free.app
 components:
   securitySchemes:
     basicAuth:
@@ -38,7 +39,7 @@ paths:
             type: string
           example: application/json
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -48,7 +49,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '395'
+                example: "395"
             Content-Type:
               schema:
                 type: string
@@ -69,18 +70,18 @@ paths:
                 active_features: null
                 brain_id: 55e94ce1-343c-43d9-b48b-2556277eb8db
                 created_on: 1716136982.557583
-                description: ''
+                description: ""
                 document_count: 0
                 id: 55e94ce1-343c-43d9-b48b-2556277eb8db
                 language_code: en
                 metadata_schema: null
                 org_uuid: 3bef451d-5bbd-4a6e-b504-6c491c3889fe
                 storage_bytes: 0
-                supp_id: ''
+                supp_id: ""
                 title: Test - brain
                 type: unstructured
                 updated_on: 1716136982.564879
-        '401':
+        "401":
           description: Unauthorized
           headers:
             Alt-Svc:
@@ -90,7 +91,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '28'
+                example: "28"
             Content-Type:
               schema:
                 type: string
@@ -109,7 +110,7 @@ paths:
                 type: object
               example:
                 msg: Token has expired
-        '500':
+        "500":
           description: Internal Server Error
           headers:
             Alt-Svc:
@@ -119,7 +120,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '128'
+                example: "128"
             Content-Type:
               schema:
                 type: string
@@ -145,7 +146,7 @@ paths:
         - Brain
       summary: Get All Brains
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -155,7 +156,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '768'
+                example: "768"
             Content-Type:
               schema:
                 type: string
@@ -176,28 +177,28 @@ paths:
                 - active_features: null
                   brain_id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                   created_on: 1716137128.912637
-                  description: ''
+                  description: ""
                   document_count: 0
                   id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                   language_code: en
                   metadata_schema: null
                   org_uuid: 3bef451d-5bbd-4a6e-b504-6c491c3889fe
                   storage_bytes: 0
-                  supp_id: ''
+                  supp_id: ""
                   title: Test Updated Brain
                   type: unstructured
                   updated_on: 1716137146
                 - active_features: null
                   brain_id: 2b7cf406-640e-4344-b239-7c9ad2b08757
                   created_on: 1716137308.461201
-                  description: ''
+                  description: ""
                   document_count: 0
                   id: 2b7cf406-640e-4344-b239-7c9ad2b08757
                   language_code: en
                   metadata_schema: null
                   org_uuid: 3bef451d-5bbd-4a6e-b504-6c491c3889fe
                   storage_bytes: 0
-                  supp_id: ''
+                  supp_id: ""
                   title: Test - brain
                   type: unstructured
                   updated_on: 1716137308
@@ -220,7 +221,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -230,7 +231,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '386'
+                example: "386"
             Content-Type:
               schema:
                 type: string
@@ -251,18 +252,18 @@ paths:
                 active_features: null
                 brain_id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                 created_on: 1716137128.912637
-                description: ''
+                description: ""
                 document_count: 0
                 id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                 language_code: en
                 metadata_schema: null
                 org_uuid: 3bef451d-5bbd-4a6e-b504-6c491c3889fe
                 storage_bytes: 0
-                supp_id: ''
+                supp_id: ""
                 title: Test Updated Brain
                 type: unstructured
                 updated_on: 1716137146
-        '500':
+        "500":
           description: Internal Server Error
           headers:
             Alt-Svc:
@@ -272,7 +273,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '979'
+                example: "979"
             Content-Type:
               schema:
                 type: string
@@ -290,7 +291,7 @@ paths:
               schema:
                 type: object
               example:
-                error: 'Error updating knowledge base:'
+                error: "Error updating knowledge base:"
     get:
       tags:
         - Brain
@@ -301,9 +302,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -313,7 +314,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '386'
+                example: "386"
             Content-Type:
               schema:
                 type: string
@@ -334,18 +335,18 @@ paths:
                 active_features: null
                 brain_id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                 created_on: 1716137128.912637
-                description: ''
+                description: ""
                 document_count: 0
                 id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                 language_code: en
                 metadata_schema: null
                 org_uuid: 3bef451d-5bbd-4a6e-b504-6c491c3889fe
                 storage_bytes: 0
-                supp_id: ''
+                supp_id: ""
                 title: Test Updated Brain
                 type: unstructured
                 updated_on: 1716137146
-        '404':
+        "404":
           description: Not Found
           headers:
             Alt-Svc:
@@ -355,7 +356,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '38'
+                example: "38"
             Content-Type:
               schema:
                 type: string
@@ -384,9 +385,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -396,7 +397,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '38'
+                example: "38"
             Content-Type:
               schema:
                 type: string
@@ -465,9 +466,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -485,7 +486,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '2227'
+                example: "2227"
             Connection:
               schema:
                 type: string
@@ -530,14 +531,14 @@ paths:
                   the system hardware through a common and well-understood
                   interface.
                 created_on: 1715540036
-                description: ''
+                description: ""
                 document_type: raw_text
                 file_extension: .txt
                 file_name: null
                 id: 0a7b731a-1aaf-4255-b047-12ebfd446f3c
                 knowledge_base_id: 930388ef-da14-46fb-9c63-0fc7364fa0e5
                 link_to_source: null
-                supp_id: ''
+                supp_id: ""
                 title: null
                 vectorization_status: PENDING
   /document/{brain_id}/url:
@@ -558,9 +559,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -570,7 +571,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '360'
+                example: "360"
             Content-Type:
               schema:
                 type: string
@@ -599,7 +600,7 @@ paths:
                 supp_id: null
                 title: null
                 vectorization_status: URL_SUBMITTED_FOR_SCRAPING
-        '500':
+        "500":
           description: Internal Server Error
           headers:
             Alt-Svc:
@@ -609,7 +610,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '81'
+                example: "81"
             Content-Type:
               schema:
                 type: string
@@ -641,7 +642,7 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
         - name: document_id
           in: path
           schema:
@@ -649,7 +650,7 @@ paths:
           required: true
           example: a00f07cb-c04c-4824-9b26-5b7eb5c274ae
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -667,7 +668,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '428'
+                example: "428"
             Connection:
               schema:
                 type: string
@@ -690,9 +691,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -710,7 +711,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '729'
+                example: "729"
             Connection:
               schema:
                 type: string
@@ -722,14 +723,14 @@ paths:
               example:
                 - chunk_header: null
                   created_on: 1704486923
-                  description: ''
+                  description: ""
                   document_type: raw_text
                   file_extension: .txt
                   file_name: null
                   id: 7faedb64-7638-457e-bed2-0d6e12679d37
                   knowledge_base_id: b3c59c24-23a8-451d-8755-44d702f4953f
                   link_to_source: null
-                  supp_id: ''
+                  supp_id: ""
                   title: null
                   total_chunks: 2
                   vectorization_status: COMPLETE
@@ -756,7 +757,7 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
         - name: document_id
           in: path
           schema:
@@ -764,7 +765,7 @@ paths:
           required: true
           example: 020d69cb-197b-47ef-911b-ee45ee260839
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -782,7 +783,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '922'
+                example: "922"
             Connection:
               schema:
                 type: string
@@ -796,7 +797,7 @@ paths:
                   summary: Get Document
                   value:
                     chunk_header: null
-                    content: ''
+                    content: ""
                     created_on: 1715540224
                     description: null
                     document_type: file
@@ -871,7 +872,7 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
         - name: document_id
           in: path
           schema:
@@ -879,7 +880,7 @@ paths:
           required: true
           example: 5ca417c0-6d74-4752-a9cd-e2813ea67fd6
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -897,7 +898,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '50'
+                example: "50"
             Connection:
               schema:
                 type: string
@@ -928,9 +929,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{brain_id}}'
+          example: "{{brain_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -948,7 +949,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '480'
+                example: "480"
             Connection:
               schema:
                 type: string
@@ -985,11 +986,11 @@ paths:
             schema:
               type: object
               example:
-                brain_id: '{{brain_id}}'
+                brain_id: "{{brain_id}}"
                 name: Test_chat2
                 integration: files
       responses:
-        '201':
+        "201":
           description: CREATED
           headers:
             Server:
@@ -1007,7 +1008,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '396'
+                example: "396"
             Connection:
               schema:
                 type: string
@@ -1027,7 +1028,7 @@ paths:
                     last_updated: Sun, 12 May 2024 18:29:16 GMT
                     model: gpt-3.5-turbo
                     sp_metadata: {}
-                    system_message: ''
+                    system_message: ""
                     temperature: null
                     title: Test_chat
                     user_id: 6cc35c0a-5095-4677-ac22-843a68138f53
@@ -1041,7 +1042,7 @@ paths:
                     last_updated: Sun, 12 May 2024 18:30:53 GMT
                     model: data-warehouse
                     sp_metadata: N/A
-                    system_message: ''
+                    system_message: ""
                     temperature: 0
                     title: Test_chat
                     user_id: 6cc35c0a-5095-4677-ac22-843a68138f53
@@ -1050,7 +1051,7 @@ paths:
         - Chat
       summary: List Chats
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1060,7 +1061,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '717'
+                example: "717"
             Content-Type:
               schema:
                 type: string
@@ -1085,7 +1086,7 @@ paths:
                   id: 421
                   last_updated: Mon, 20 May 2024 06:05:49 GMT
                   model: gpt-3.5-turbo
-                  system_message: ''
+                  system_message: ""
                   temperature: 0
                   title: Test_chat2
                   user_id: abe8352f-52ad-4ce0-a34b-c48cdf8a61aa
@@ -1096,7 +1097,7 @@ paths:
                   id: 420
                   last_updated: Mon, 20 May 2024 06:05:40 GMT
                   model: gpt-3.5-turbo
-                  system_message: ''
+                  system_message: ""
                   temperature: 0
                   title: Test_chat
                   user_id: abe8352f-52ad-4ce0-a34b-c48cdf8a61aa
@@ -1111,9 +1112,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{chat_id}}'
+          example: "{{chat_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1131,7 +1132,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '393'
+                example: "393"
             Connection:
               schema:
                 type: string
@@ -1143,7 +1144,7 @@ paths:
               example:
                 created_on: 1704488059
                 default_options:
-                  auto_query_guidance: ''
+                  auto_query_guidance: ""
                   knowledge_base_ids:
                     - b3c59c24-23a8-451d-8755-44d702f4953f
                   model: gpt-3.5-turbo
@@ -1155,7 +1156,7 @@ paths:
                 id: eaabf727-c965-4371-b149-3e5b2b207827
                 num_interactions: 0
                 recent_chat_history: []
-                supp_id: ''
+                supp_id: ""
                 title: Test Chat Thread
     put:
       tags:
@@ -1175,9 +1176,9 @@ paths:
           schema:
             type: string
           required: true
-          example: '{{chat_id}}'
+          example: "{{chat_id}}"
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1187,7 +1188,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '769'
+                example: "769"
             Content-Type:
               schema:
                 type: string
@@ -1207,12 +1208,12 @@ paths:
               example:
                 - brain_id: null
                   chat_id: 18083f81-d93e-4f98-a377-d1e8af8d40f3
-                  created_at: '2024-02-26T06:58:34.095147+00:00'
+                  created_at: "2024-02-26T06:58:34.095147+00:00"
                   id: 209
-                  last_updated: '2024-03-12T07:47:37.206612+00:00'
+                  last_updated: "2024-03-12T07:47:37.206612+00:00"
                   model: gpt-3.5-turbo
                   sp_metadata:
-                    - id: '0000000001'
+                    - id: "0000000001"
                       model_response:
                         content: >-
                           Hello! I'm just a computer program, so I don't have
@@ -1222,14 +1223,14 @@ paths:
                       user_input:
                         content: Hello! How're you doing?
                         timestamp: 1708930731
-                    - id: '0000000002'
+                    - id: "0000000002"
                       model_response:
                         content: Hello again! How can I assist you today?
                         timestamp: 1710229655
                       user_input:
                         content: heyy!!
                         timestamp: 1710229653
-                  system_message: ''
+                  system_message: ""
                   temperature: null
                   title: Heyy!!!
                   user_id: a7a690e6-2a83-4ec5-8eb2-73b0c1d0aa9c
@@ -1245,7 +1246,7 @@ paths:
           required: true
           example: 8474f310-a2a9-4cf8-b16f-8d01a5a6b5fa
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1263,7 +1264,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '40'
+                example: "40"
             Connection:
               schema:
                 type: string
@@ -1288,7 +1289,7 @@ paths:
                 chat_thread_id: d504386d-6cba-4e38-96f0-aa16b83e1cd8
                 text: hi
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1298,7 +1299,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '298'
+                example: "298"
             Content-Type:
               schema:
                 type: string
@@ -1340,7 +1341,7 @@ paths:
               example:
                 chat_thread_id: d504386d-6cba-4e38-96f0-aa16b83e1cd8
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1350,7 +1351,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '454'
+                example: "454"
             Content-Type:
               schema:
                 type: string
@@ -1401,7 +1402,7 @@ paths:
                   - https://byteleap.co
                   - https://ayushgoyal.dev
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1419,7 +1420,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '388'
+                example: "388"
             Connection:
               schema:
                 type: string
@@ -1431,7 +1432,7 @@ paths:
               example:
                 - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
-                  created_at: '2024-02-18T19:00:11.989503+00:00'
+                  created_at: "2024-02-18T19:00:11.989503+00:00"
                   id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
                   name: Chatbot -1
                   urls:
@@ -1444,7 +1445,7 @@ paths:
         - Chatbot
       summary: List Chatbots
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1462,7 +1463,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '388'
+                example: "388"
             Connection:
               schema:
                 type: string
@@ -1477,7 +1478,7 @@ paths:
                   value:
                     - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                       brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
-                      created_at: '2024-02-18T19:00:11.989503+00:00'
+                      created_at: "2024-02-18T19:00:11.989503+00:00"
                       id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
                       name: Chatbot -1
                       urls:
@@ -1489,7 +1490,7 @@ paths:
                   value:
                     - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                       brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
-                      created_at: '2024-02-18T19:00:11.989503+00:00'
+                      created_at: "2024-02-18T19:00:11.989503+00:00"
                       id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
                       name: Chatbot -1
                       urls:
@@ -1508,7 +1509,7 @@ paths:
             type: string
           example: 7a2e792d-cf48-49d2-a36d-186be034a9dc
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1526,7 +1527,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '360'
+                example: "360"
             Connection:
               schema:
                 type: string
@@ -1538,7 +1539,7 @@ paths:
               example:
                 api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                 brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
-                created_at: '2024-02-18T19:00:11.989503+00:00'
+                created_at: "2024-02-18T19:00:11.989503+00:00"
                 id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
                 name: Chatbot -1
                 urls:
@@ -1557,7 +1558,7 @@ paths:
             type: string
           example: 1a718a80-71c0-414b-915c-5c5991597ac7
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1567,7 +1568,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '45'
+                example: "45"
             Content-Type:
               schema:
                 type: string
@@ -1592,7 +1593,7 @@ paths:
       tags:
         - Chatbot
       summary: Get Chatbot messages
-      description: 'note: there is a limit of 10000 messages'
+      description: "note: there is a limit of 10000 messages"
       parameters:
         - name: chatbot_id
           in: query
@@ -1600,7 +1601,7 @@ paths:
             type: string
           example: 1a718a80-71c0-414b-915c-5c5991597ac7
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1610,7 +1611,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '394'
+                example: "394"
             Content-Type:
               schema:
                 type: string
@@ -1630,14 +1631,14 @@ paths:
               example:
                 chat_messages:
                   - actor: USER
-                    created_at: '2024-05-20T06:46:09.010233+00:00'
+                    created_at: "2024-05-20T06:46:09.010233+00:00"
                     id: 461
                     message: hi
                     reference: []
                     thread_id: 7c621be0-96d8-4ecc-9149-74d0ff94f106
                     timestamp: null
                   - actor: AI
-                    created_at: '2024-05-20T06:46:12.300393+00:00'
+                    created_at: "2024-05-20T06:46:12.300393+00:00"
                     id: 462
                     message: Hello! How can I assist you today?
                     reference: []
@@ -1659,7 +1660,7 @@ paths:
                   - https://byteleap.co
                   - https://anshgoyal.com
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1677,7 +1678,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '389'
+                example: "389"
             Connection:
               schema:
                 type: string
@@ -1689,7 +1690,7 @@ paths:
               example:
                 - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
-                  created_at: '2024-02-18T19:00:11.989503+00:00'
+                  created_at: "2024-02-18T19:00:11.989503+00:00"
                   id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
                   name: Updated Name
                   urls:
@@ -1708,7 +1709,7 @@ paths:
             type: string
           example: 2de69bc3-3f60-46a2-be30-e95c98ab7a87
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1726,7 +1727,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '37'
+                example: "37"
             Connection:
               schema:
                 type: string
@@ -1749,7 +1750,7 @@ paths:
             type: string
           example: c7af119a-a5c6-47a4-a5fd-fbf96ef08851
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1767,7 +1768,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '389'
+                example: "389"
             Connection:
               schema:
                 type: string
@@ -1779,7 +1780,7 @@ paths:
               example:
                 - api_key: fe527e6f-9518-4200-93ef-e082ba2467a5
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
-                  created_at: '2024-02-18T19:00:11.989503+00:00'
+                  created_at: "2024-02-18T19:00:11.989503+00:00"
                   id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
                   name: Updated Name
                   urls:
@@ -1800,7 +1801,7 @@ paths:
           description: notion / confluence
           example: notion
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1818,7 +1819,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '237'
+                example: "237"
             Connection:
               schema:
                 type: string
@@ -1844,7 +1845,7 @@ paths:
           description: notion / confluence
           example: notion
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -1863,7 +1864,7 @@ paths:
           description: notion / confluence
           example: confluence
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1873,7 +1874,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '960'
+                example: "960"
             Content-Type:
               schema:
                 type: string
@@ -1892,30 +1893,30 @@ paths:
                 type: object
               example:
                 - content: {}
-                  created_at: '2024-05-20T06:19:00.209Z'
-                  id: '65620'
+                  created_at: "2024-05-20T06:19:00.209Z"
+                  id: "65620"
                   title: Getting started in Confluence
-                  updated_at: '2024-05-20T06:19:00.209Z'
+                  updated_at: "2024-05-20T06:19:00.209Z"
                   url: >-
                     https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/pages/65620/Getting+started+in+Confluence
                 - content: {}
-                  created_at: '2024-05-20T06:19:00.612Z'
-                  id: '65621'
+                  created_at: "2024-05-20T06:19:00.612Z"
+                  id: "65621"
                   title: Overview
-                  updated_at: '2024-05-20T06:19:00.612Z'
+                  updated_at: "2024-05-20T06:19:00.612Z"
                   url: >-
                     https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/overview
                 - content: {}
-                  created_at: '2024-05-20T06:19:00.522Z'
-                  id: '98385'
+                  created_at: "2024-05-20T06:19:00.522Z"
+                  id: "98385"
                   title: My first space Home
-                  updated_at: '2024-05-20T06:19:00.522Z'
+                  updated_at: "2024-05-20T06:19:00.522Z"
                   url: https://shreyaans20.atlassian.net/wiki/spaces/TEAM/overview
                 - content: {}
-                  created_at: '2024-05-20T06:19:21.046Z'
-                  id: '294933'
+                  created_at: "2024-05-20T06:19:21.046Z"
+                  id: "294933"
                   title: hello
-                  updated_at: '2024-05-20T06:19:33.999Z'
+                  updated_at: "2024-05-20T06:19:33.999Z"
                   url: >-
                     https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/pages/294933/hello
   /integration/{integration_name}/add:
@@ -1932,7 +1933,7 @@ paths:
               example:
                 brain_id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                 page_ids:
-                  - '65621'
+                  - "65621"
       parameters:
         - name: integration_name
           in: path
@@ -1942,7 +1943,7 @@ paths:
           description: notion / confluence
           example: notion
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Alt-Svc:
@@ -1952,7 +1953,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '50'
+                example: "50"
             Content-Type:
               schema:
                 type: string
@@ -1975,9 +1976,9 @@ paths:
     get:
       tags:
         - ogranisation
-      summary: get user org 
+      summary: get user org
       responses:
-        '200':
+        "200":
           description: OK
           headers:
             Server:
@@ -1995,7 +1996,7 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '322'
+                example: "322"
             Connection:
               schema:
                 type: string
