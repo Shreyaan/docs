@@ -1,86 +1,104 @@
 ---
-title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+title: Quickstart Guide
+description: 'Get started with Athena Copilot API quickly using our Python and TypeScript SDKs.'
 ---
 
-## Setup your development
+## Quickstart Guide
 
-Learn how to update your docs locally and and deploy them to the public.
+Welcome to the Athena Copilot API Quickstart Guide. This guide will help you get up and running quickly using our Python and TypeScript SDKs.
 
-### Edit and preview
+## SDK Installation
 
-<AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
-  </Accordion>
-</AccordionGroup>
+### Python SDK
 
-### Deploy your changes
+To install the Python SDK, use the following pip command:
 
-<AccordionGroup>
+```bash
+pip install athenacopilot-sdk
+```
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
+### TypeScript SDK
 
-</AccordionGroup>
+To install the TypeScript SDK, use the following npm command:
 
-## Update your docs
+```bash
+npm install athenacopilot-sdk
+```
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+## Getting Started with Python
 
-<CardGroup>
+Here's a simple example to get you started with the Athena Copilot Python SDK.
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
-</Card>
+1. **Install the SDK**
 
-<Card
-  title="Add API Endpoints"
-  icon="square-code"
-  href="/api-playground/configuration"
->
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
+   ```bash
+   pip install athenacopilot-sdk
+   ```
 
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
+2. **Initialize the Client**
 
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
-</Card>
+   ```python
+   from athenacopilot import AthenaClient
 
-</CardGroup>
+   client = AthenaClient(user_id='your_user_id', api_key='your_api_key')
+   ```
+
+3. **Make a Request**
+
+   ```python
+   response = client.chat.ask(question="What is Athena Copilot?")
+   print(response)
+   ```
+
+For more details, refer to the [Python SDK documentation](https://github.com/athenacopilot/athenacopilot-python).
+
+## Getting Started with TypeScript
+
+Here's a simple example to get you started with the Athena Copilot TypeScript SDK.
+
+1. **Install the SDK**
+
+   ```bash
+   npm install athenacopilot-sdk
+   ```
+
+2. **Initialize the Client**
+
+   ```typescript
+   import { AthenaClient } from 'athenacopilot-sdk';
+
+   const client = new AthenaClient({
+     userId: 'your_user_id',
+     apiKey: 'your_api_key',
+   });
+   ```
+
+3. **Make a Request**
+
+   ```typescript
+   client.chat.ask('What is Athena Copilot?')
+     .then(response => console.log(response))
+     .catch(error => console.error(error));
+   ```
+
+For more details, refer to the [TypeScript SDK documentation](https://github.com/athenacopilot/athenacopilot-typescript).
+
+## Next Steps
+
+Once you have installed the SDK and made your first request, explore the following sections to learn more about Athena Copilot's capabilities:
+
+- **[Authentication Guide](/Authentication)**
+- **[Brain Endpoints](/brain)**
+- **[Chat Endpoints](/chat)**
+- **[Document Endpoints](/document)**
+- **[Chatbot Endpoints](/chatbot)**
+- **[Integration Endpoints](/integration)**
+- **[ogranisation Endpoints](/ogranisation)**
+
+## Need Help?
+
+If you encounter any issues or need further assistance, please refer to our [support documentation](#) or contact our support team.
+
+---
+
+By following this guide, you'll be able to quickly integrate Athena Copilot's powerful features into your applications. Get started now and transform the way your team interacts with your data!
