@@ -1,71 +1,104 @@
 ---
-title: Introduction
-description: 'Welcome to the home of your new documentation'
+title: Athena Copilot API Overview
+description: 'Comprehensive guide to using Athena Copilot API for seamless data integration and enhanced productivity'
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
+## Introduction
 
-## Setting up
+Welcome to the Athena Copilot API documentation. Athena Copilot is an AI-powered enterprise search solution that enhances productivity by enabling your team to interact with your data and receive accurate responses. Connect your data securely and get started in minutes!
 
-The first step to world-class documentation is setting up your editing environments.
+![Athena Copilot](https://framerusercontent.com/images/AtCoYlWx1ulkh5l8BB42CRZRrBg.png?scale-down-to=2048)
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+## Available Resources and Operations
 
-## Make it yours
+Athena Copilot API provides a range of resources and operations to help you manage your data efficiently. Below is a comprehensive list of the available resources and their respective operations:
 
-Update your docs to your brand and add valuable content for the best user conversion.
+### Brain
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+- **postBrain**: Create Brain
+- **getBrain**: Get All Brains
+- **putBrainBrainId**: Update Brain
+- **getBrainBrainId**: Get Brain by ID
+- **deleteBrainBrainId**: Delete Brain
+
+### Document
+
+- **postDocumentBrainIdText**: Create Text Document
+- **postDocumentBrainIdUrl**: Create Document by URL
+- **getDocumentBrainIdDocumentIdDownload**: Download Document
+- **getDocumentBrainId**: List Documents
+- **getDocumentBrainIdDocumentId**: Get Document
+- **deleteDocumentBrainIdDocumentId**: Delete Document
+- **postDocumentBrainIdFile**: Upload Document
+
+### Chat
+
+- **postChat**: Create New Chat
+- **getChat**: List Chats
+- **getChatChatId**: Get Chat
+- **putChatChatId**: Update Chat
+- **deleteChatChatId**: Delete Chat
+- **postChatGetResponse**: Get Response
+- **postChatListInteractions**: List Interactions
+
+### Chatbot
+
+- **postChatbotCreate**: Create Chatbot
+- **postChatbotList**: List Chatbots
+- **postChatbotGet**: Get Chatbot
+- **getChatbotAnalytics**: Get Chatbot Analytics
+- **getChatbotGetMessages**: Get Chatbot Messages
+- **postChatbotUpdate**: Update Chatbot
+- **postChatbotDelete**: Delete Chatbot
+- **postChatbotReset**: Reset Token
+
+### Integration
+
+- **getIntegrationIntegrationNameConnect**: Connect
+- **getIntegrationIntegrationNameDisconnect**: Disconnect
+- **getIntegrationIntegrationNameList**: List
+- **postIntegrationIntegrationNameAdd**: Add to Brain
+
+### Organisation
+
+- **getOrganisation**: Get User Organization
+
+## Key Features
+
+### Generative AI for Your Data
+
+Athena delivers more relevant and accurate information by understanding your company’s data, grouped together in "Brains".
+
+### Unlock Productivity
+
+Eliminate busy work by analyzing and extracting information from across your company's data in seconds.
+
+### Full Referenceability
+
+Lets you dig deeper and know where answers come from, backed by advanced LLM techniques.
+
+### Chatbots
+
+Embed chatbots where your users are and enable them to get the information they need.
+
+## Diverse File Support
+
+We support multiple file formats - PDF, Docs, Markdown, Text, Audio, or even complete websites. Simply upload files from your local computer, and start asking questions.
+
+You can also connect third-party integrations to enable seamless data sync and skip uploading manually.
+
+## Secure & Model Agnostic
+
+We adhere to top-tier industry standards to ensure the privacy and security of your data. Your data is never utilized for model training purposes.
+
+### Encryption
+
+All data is encrypted at rest using AES 256. All data is encrypted in transit using TLS 1.2+.
+
+### Multiple LLMs
+
+We use OpenAI, Mistral, and Claude to answer your questions. You may select one based on your needs.
+
+---
+
+For authentication guide, please proceed to the next page.
