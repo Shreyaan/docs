@@ -24,7 +24,7 @@
     "name": "Dashboard",
     "url": "https://dashboard.mintlify.com"
   },
-   "openapi": ["/openapi.yml"],
+  "openapi": ["/openapi.yml"],
   "tabs": [
     {
       "name": "API Reference",
@@ -51,11 +51,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
+      "pages": ["introduction", "quickstart", "development"]
     },
     {
       "group": "Essentials",
@@ -70,9 +66,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
+      "pages": ["api-reference/introduction"]
     },
     {
       "group": "Endpoint Examples",
@@ -81,6 +75,66 @@
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
       ]
+    },
+    {
+      "group": "Brain",
+      "pages": [
+        "brain/get-all-brains",
+        "brain/create-brain",
+        "brain/get-brain-by-id",
+        "brain/update-brain",
+        "brain/delete-brain"
+      ]
+    },
+    {
+      "group": "Document",
+      "pages": [
+        "document/create-text-document",
+        "document/create-document-by-url",
+        "document/download",
+        "document/list-documents",
+        "document/get-document",
+        "document/delete-document",
+        "document/upload-document"
+      ]
+    },
+    {
+      "group": "Chat",
+      "pages": [
+        "chat/list-chats",
+        "chat/create-new-chat",
+        "chat/get-chat",
+        "chat/update-chat",
+        "chat/delete-chat",
+        "chat/get-response",
+        "chat/list-interactions"
+      ]
+    },
+    {
+      "group": "Chatbot",
+      "pages": [
+        "chatbot/create-chatbot",
+        "chatbot/list-chatbots",
+        "chatbot/get-chatbot",
+        "chatbot/get-chatbot-analytics",
+        "chatbot/get-chatbot-messages",
+        "chatbot/update-chatbot",
+        "chatbot/delete-chatbot",
+        "chatbot/reset-token"
+      ]
+    },
+    {
+      "group": "Integration",
+      "pages": [
+        "integration/connect",
+        "integration/disconnect",
+        "integration/list",
+        "integration/add-to-brain"
+      ]
+    },
+    {
+      "group": "ogranisation",
+      "pages": ["ogranisation/get-user-org"]
     }
   ],
   "footerSocials": {
