@@ -25,22 +25,12 @@
     "url": "https://app.athenacopilot.ai/"
   },
   "openapi": ["/openapi.yml"],
-  
+
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Athena Copilot",
+      "icon": "/logo/icon.png",
+      "url": "https://athenacopilot.ai"
     }
   ],
   "navigation": [
