@@ -1893,7 +1893,7 @@ paths:
           schema:
             type: string
           required: true
-          description: notion / confluence
+          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
           example: notion
       responses:
         "200":
@@ -1937,7 +1937,7 @@ paths:
           schema:
             type: string
           required: true
-          description: notion / confluence
+          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
           example: notion
       responses:
         "200":
@@ -1956,7 +1956,7 @@ paths:
           schema:
             type: string
           required: true
-          description: notion / confluence
+          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
           example: confluence
       responses:
         "200":
@@ -2043,7 +2043,7 @@ paths:
           schema:
             type: string
           required: true
-          description: notion / confluence
+          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
           example: notion
       responses:
         "200":
