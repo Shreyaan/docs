@@ -1,104 +1,78 @@
 ---
-title: Athena Copilot API Overview
-description: 'Comprehensive guide to using Athena Copilot API for seamless data integration and enhanced productivity'
+title: Introduction to Athena Copilot API
+description: 'Welcome to the Athena Copilot API documentation. Learn how to integrate and interact with our powerful features.'
 ---
 
-## Introduction
+## Welcome to Athena Copilot API
 
-Welcome to the Athena Copilot API documentation. Athena Copilot is an AI-powered enterprise search solution that enhances productivity by enabling your team to interact with your data and receive accurate responses. Connect your data securely and get started in minutes!
+Athena Copilot enables your team to significantly boost productivity by providing the capability to interact with your data and receive accurate, real-time responses. Our API allows you to connect your data securely and start leveraging advanced AI functionalities within minutes.
 
 ![Athena Copilot](https://framerusercontent.com/images/AtCoYlWx1ulkh5l8BB42CRZRrBg.png?scale-down-to=2048)
 
-## Available Resources and Operations
+## Getting Started
 
-Athena Copilot API provides a range of resources and operations to help you manage your data efficiently. Below is a comprehensive list of the available resources and their respective operations:
+All API endpoints are documented in the left sidebar. The sections include:
+- **Brain**
+- **Chat**
+- **Document**
+- **Chatbot**
+- **Org**
+- **Integration**
 
-### Brain
+For authentication, refer to our [Authentication Guide](/Authentication).
 
-- **postBrain**: Create Brain
-- **getBrain**: Get All Brains
-- **putBrainBrainId**: Update Brain
-- **getBrainBrainId**: Get Brain by ID
-- **deleteBrainBrainId**: Delete Brain
-
-### Document
-
-- **postDocumentBrainIdText**: Create Text Document
-- **postDocumentBrainIdUrl**: Create Document by URL
-- **getDocumentBrainIdDocumentIdDownload**: Download Document
-- **getDocumentBrainId**: List Documents
-- **getDocumentBrainIdDocumentId**: Get Document
-- **deleteDocumentBrainIdDocumentId**: Delete Document
-- **postDocumentBrainIdFile**: Upload Document
-
-### Chat
-
-- **postChat**: Create New Chat
-- **getChat**: List Chats
-- **getChatChatId**: Get Chat
-- **putChatChatId**: Update Chat
-- **deleteChatChatId**: Delete Chat
-- **postChatGetResponse**: Get Response
-- **postChatListInteractions**: List Interactions
-
-### Chatbot
-
-- **postChatbotCreate**: Create Chatbot
-- **postChatbotList**: List Chatbots
-- **postChatbotGet**: Get Chatbot
-- **getChatbotAnalytics**: Get Chatbot Analytics
-- **getChatbotGetMessages**: Get Chatbot Messages
-- **postChatbotUpdate**: Update Chatbot
-- **postChatbotDelete**: Delete Chatbot
-- **postChatbotReset**: Reset Token
-
-### Integration
-
-- **getIntegrationIntegrationNameConnect**: Connect
-- **getIntegrationIntegrationNameDisconnect**: Disconnect
-- **getIntegrationIntegrationNameList**: List
-- **postIntegrationIntegrationNameAdd**: Add to Brain
-
-### Organisation
-
-- **getOrganisation**: Get User Organization
 
 ## Key Features
 
-### Generative AI for Your Data
 
-Athena delivers more relevant and accurate information by understanding your company’s data, grouped together in "Brains".
 
-### Unlock Productivity
+<CardGroup cols={2}>
+  <Card
+    title="Generative AI for Your Data"
+    icon="brain"
+    href="#"
+  >
+    Athena delivers more relevant and accurate information by understanding your company’s data, grouped together in "Brains".
+  </Card>
+  <Card
+    title="Unlock Productivity"
+    icon="chart-line"
+    href="#"
+  >
+    Eliminate busy work by analyzing and extracting information from your company's data in seconds.
+  </Card>
+  <Card
+    title="Full Referenceability"
+    icon="book"
+    href="#"
+  >
+    Understand where answers come from with advanced LLM techniques.
+  </Card>
+  <Card
+    title="Embed Chatbots"
+    icon="robot"
+    href="#"
+  >
+    Place chatbots where your users are to provide instant information.
+  </Card>
+  <Card
+    title="Diverse File Support"
+    icon="file"
+    href="#"
+  >
+    Upload and analyze multiple file formats or connect third-party integrations.
+  </Card>
+  <Card
+    title="Secure & Model Agnostic"
+    icon="lock"
+    href="#"
+  >
+    Ensure the privacy and security of your data with top-tier encryption and multiple LLM options.
+  </Card>
+</CardGroup>
 
-Eliminate busy work by analyzing and extracting information from across your company's data in seconds.
+## Get Started
 
-### Full Referenceability
+Ready to 10x your team’s productivity? [Get started](#) with Athena Copilot today and experience the power of generative AI for your enterprise.
 
-Lets you dig deeper and know where answers come from, backed by advanced LLM techniques.
-
-### Chatbots
-
-Embed chatbots where your users are and enable them to get the information they need.
-
-## Diverse File Support
-
-We support multiple file formats - PDF, Docs, Markdown, Text, Audio, or even complete websites. Simply upload files from your local computer, and start asking questions.
-
-You can also connect third-party integrations to enable seamless data sync and skip uploading manually.
-
-## Secure & Model Agnostic
-
-We adhere to top-tier industry standards to ensure the privacy and security of your data. Your data is never utilized for model training purposes.
-
-### Encryption
-
-All data is encrypted at rest using AES 256. All data is encrypted in transit using TLS 1.2+.
-
-### Multiple LLMs
-
-We use OpenAI, Mistral, and Claude to answer your questions. You may select one based on your needs.
-
----
-
-For authentication guide, please proceed to the next page.
+For any further assistance, refer to our support documentation or contact our support team.
