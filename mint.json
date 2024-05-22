@@ -24,6 +24,13 @@
     "name": "Dashboard",
     "url": "https://app.athenacopilot.ai/"
   },
+   "anchors": [
+    {
+      "name": "Athena Copilot",
+      "icon": "arrow-up-right-from-square",
+      "url": "https://athenacopilot.ai"
+    }
+  ],
   "openapi": ["/openapi.yml"],
   "navigation": [
     {
