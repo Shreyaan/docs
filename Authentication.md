@@ -59,6 +59,11 @@ Alternatively, you can use your User ID and API Key separately, especially usefu
 #### Steps to Use Separate User ID and API Key
 
 1. Copy your User ID and API Key separately from the API Key Settings Page.
+2. Use `userID` in `username` field and `apiKey` in `password` field
+
+or 
+
+1. Copy your User ID and API Key separately from the API Key Settings Page.
 2. Combine your User ID and API Key in the format `userID:apiKey`.
 3. Encode this combined string in base64 format.
 4. Add the following header to your HTTP request:
@@ -66,6 +71,7 @@ Alternatively, you can use your User ID and API Key separately, especially usefu
    ```http
    Authorization: Basic <base64(userID:apiKey)>
    ```
+
 
 ## Authentication in Our Documentation Site
 
@@ -94,6 +100,8 @@ Authorization: Basic dXNlcjEyMzprZXk0NTY=
    ```http
    Authorization: Basic dXNlcjEyMzprZXk0NTY=
    ```
+
+or 
 
 ## Conclusion
 
