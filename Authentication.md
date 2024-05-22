@@ -103,7 +103,11 @@ Authorization: Basic dXNlcjEyMzprZXk0NTY=
 
 or
 
+
+Use `user123` in `username` field and `key456` in `password` field
+
 ![apikeyexample](imgs/apikeyexample.png)
+
 
 ## Conclusion
 
