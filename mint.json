@@ -25,14 +25,6 @@
     "url": "https://app.athenacopilot.ai/"
   },
   "openapi": ["/openapi.yml"],
-
-  "anchors": [
-    {
-      "name": "Athena Copilot",
-      "icon": "/logo/icon.png",
-      "url": "https://athenacopilot.ai"
-    }
-  ],
   "navigation": [
     {
       "group": "Get Started",
