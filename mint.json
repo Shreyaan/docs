@@ -2,9 +2,9 @@
   "name": "Athena Copilot Docs",
   "logo": {
     "dark": "/logo/icon.png",
-    "light": "/logo/light.png"
+    "light": "/logo/icon.png"
   },
-  "favicon": "logo/icon.png",
+  "favicon": "logo/favicon.png",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -24,7 +24,7 @@
     "name": "Dashboard",
     "url": "https://app.athenacopilot.ai/"
   },
-   "anchors": [
+  "anchors": [
     {
       "name": "Athena Copilot",
       "icon": "arrow-up-right-from-square",
