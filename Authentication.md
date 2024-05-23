@@ -9,7 +9,7 @@ This guide provides detailed instructions on how to authenticate your requests u
 
 ## Obtaining API Keys
 
-To get your API keys, navigate to the [API Key Settings Page](https://app.athenacopilot.ai/settings/api-key). API keys are organization-level credentials and can be used by any user within the organization. For enhanced security and management, we recommend using the organization admin user IDs for authentication.
+To get your API keys, navigate to the [API Key Settings Page](https://app.athenacopilot.ai/settings/api-key). API keys are organization-level credentials and can be used by any user within the organization. For enhanced security and management, we recommend each user using their own `userId` for better logging.
 
 ### Steps to Obtain API Keys
 
