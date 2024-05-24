@@ -57,6 +57,64 @@ components:
         updated_on:
           type: number
           description: Timestamp when the brain was last updated
+    Document:
+      type: object
+      properties:
+        chunk_header:
+          type: string
+          nullable: true
+          description: The header or context information for the document chunk.
+        content:
+          type: string
+          nullable: true
+          description: The content or text of the document chunk.
+        created_on:
+          type: integer
+          description: The Unix timestamp representing the creation time of the document.
+        description:
+          type: string
+          nullable: true
+          description: The description or summary of the document.
+        document_type:
+          type: string
+          description: The type of the document (e.g., raw_text, file, url).
+        file_extension:
+          type: string
+          nullable: true
+          description: The file extension of the document (if applicable).
+        file_name:
+          type: string
+          nullable: true
+          description: The name of the file for the document (if applicable).
+        id:
+          type: string
+          description: The unique identifier of the document.
+        knowledge_base_id:
+          type: string
+          description: The identifier of the knowledge base to which the document belongs.
+        link_to_source:
+          type: string
+          nullable: true
+          description: The URL or link to the source of the document (if applicable).
+        supp_id:
+          type: string
+          nullable: true
+          description: The supplementary identifier of the document (if applicable).
+        title:
+          type: string
+          nullable: true
+          description: The title of the document.
+        url:
+          type: string
+          nullable: true
+          description: The URL of the document (if applicable).
+        vectorization_status:
+          type: string
+          description: The status of the document vectorization process.
+        total_chunks:
+          type: integer
+          nullable: true
+          description: The total number of chunks the document is divided into.
 
 security:
   - basicAuth: []
@@ -501,35 +559,7 @@ paths:
                   What is an operating system? An operating system (OS) is the
                   program that, after being initially loaded into the computer
                   by a boot program, manages all of the other application
-                  programs in a computer. The application programs make use of
-                  the operating system by making requests for services through a
-                  defined application program interface (API). In addition,
-                  users can interact directly with the operating system through
-                  a user interface, such as a command-line interface (CLI) or a
-                  graphical UI (GUI). Why use an operating system? An operating
-                  system brings powerful benefits to computer software and
-                  software development. Without an operating system, every
-                  application would need to include its own UI, as well as the
-                  comprehensive code needed to handle all low-level
-                  functionality of the underlying computer, such as disk
-                  storage, network interfaces and so on. Considering the vast
-                  array of underlying hardware available, this would vastly
-                  bloat the size of every application and make software
-                  development impractical. Instead, many common tasks, such as
-                  sending a network packet or displaying text on a standard
-                  output device, such as a display, can be offloaded to system
-                  software that serves as an intermediary between the
-                  applications and the hardware. The system software provides a
-                  consistent and repeatable way for applications to interact
-                  with the hardware without the applications needing to know any
-                  details about the hardware. As long as each application
-                  accesses the same resources and services in the same way, that
-                  system software -- the operating system -- can service almost
-                  any number of applications. This vastly reduces the amount of
-                  time and coding required to develop and debug an application,
-                  while ensuring that users can control, configure and manage
-                  the system hardware through a common and well-understood
-                  interface.
+                  programs in a computer............
       parameters:
         - name: brain_id
           in: path
@@ -564,42 +594,11 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Document'
               example:
                 chunk_header: null
                 content: >-
-                  What is an operating system? An operating system (OS) is the
-                  program that, after being initially loaded into the computer
-                  by a boot program, manages all of the other application
-                  programs in a computer. The application programs make use of
-                  the operating system by making requests for services through a
-                  defined application program interface (API). In addition,
-                  users can interact directly with the operating system through
-                  a user interface, such as a command-line interface (CLI) or a
-                  graphical UI (GUI). Why use an operating system? An operating
-                  system brings powerful benefits to computer software and
-                  software development. Without an operating system, every
-                  application would need to include its own UI, as well as the
-                  comprehensive code needed to handle all low-level
-                  functionality of the underlying computer, such as disk
-                  storage, network interfaces and so on. Considering the vast
-                  array of underlying hardware available, this would vastly
-                  bloat the size of every application and make software
-                  development impractical. Instead, many common tasks, such as
-                  sending a network packet or displaying text on a standard
-                  output device, such as a display, can be offloaded to system
-                  software that serves as an intermediary between the
-                  applications and the hardware. The system software provides a
-                  consistent and repeatable way for applications to interact
-                  with the hardware without the applications needing to know any
-                  details about the hardware. As long as each application
-                  accesses the same resources and services in the same way, that
-                  system software -- the operating system -- can service almost
-                  any number of applications. This vastly reduces the amount of
-                  time and coding required to develop and debug an application,
-                  while ensuring that users can control, configure and manage
-                  the system hardware through a common and well-understood
-                  interface.
+                  What is an operating system? An operating system (OS) is the program that, after being initially loaded into the computer by a boot program, manages all of the other application programs in a computer............
                 created_on: 1715540036
                 description: ''
                 document_type: raw_text
@@ -661,7 +660,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Document'
               example:
                 chunk_header: null
                 created_on: 1716137387
@@ -751,6 +750,10 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  url:
+                    type: string
+                    description: The URL to download the document file. This URL is a pre-signed URL that provides temporary access to the document file hosted on a cloud storage service.
               example:
                 url: >-
                   https://8d14e75b78613596eb36d95900f46a4e.r2.cloudflarestorage.com/athena/e41bfe56cc6141f0af74a497d18500ec-ReactJSNotesForProfessionals.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8e591b165b9623eef5270c5e16393d0b%2F20240512%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240512T185806Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=56d79bafb1a7102ffaf3820bd505efd78ebd2babe57e96cde7155900a7c43822
@@ -793,7 +796,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/Document'
               example:
                 - chunk_header: null
                   created_on: 1704486923
@@ -865,7 +870,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Document'
               examples:
                 example-0:
                   summary: Get Document
@@ -981,6 +986,10 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                    example: Document deleted successfully.
               example:
                 message: Document deleted successfully.
   /document/{brain_id}/file:
@@ -1031,7 +1040,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Document'
               example:
                 chunk_header: null
                 created_on: 1715541427
