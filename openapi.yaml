@@ -115,6 +115,129 @@ components:
           type: integer
           nullable: true
           description: The total number of chunks the document is divided into.
+    Chat:
+      type: object
+      properties:
+        brain_id:
+          type: string
+          nullable: true
+          description: The ID of the brain associated with the chat
+        chat_id:
+          type: string
+          description: The unique identifier of the chat
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the chat was created
+        id:
+          type: integer
+          description: The unique identifier of the chat record
+        last_updated:
+          type: string
+          format: date-time
+          nullable: true
+          description: The timestamp when the chat was last updated
+        model:
+          type: string
+          description: The name of the model used for the chat
+        recent_chat_history:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              model_response:
+                type: object
+                properties:
+                  content:
+                    type: string
+                  timestamp:
+                    type: integer
+              user_input:
+                type: object
+                properties:
+                  content:
+                    type: string
+                  timestamp:
+                    type: integer
+          description: The metadata related to the chat interactions
+        system_message:
+          type: string
+          nullable: true
+          description: The system message or prompt for the chat
+        temperature:
+          type: number
+          nullable: true
+          description: The temperature value used for the model
+        title:
+          type: string
+          description: The title or name of the chat
+        user_id:
+          type: string
+          description: The ID of the user associated with the chat
+        default_options:
+          nullable: true
+          type: object
+          properties:
+            auto_query_guidance:
+              type: string
+            knowledge_base_ids:
+              type: array
+              items:
+                type: string
+            model:
+              type: string
+          description: The default options for the chat
+
+    ChatInteraction:
+      type: object
+      properties:
+        actor:
+          type: string
+          description: The actor (USER or AI) of the interaction
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the interaction was created
+        dw_data:
+          type: object
+          nullable: true
+          description: The data related to the data warehouse integration
+        id:
+          type: integer
+          description: The unique identifier of the interaction
+        message:
+          type: string
+          description: The message content of the interaction
+        metadata:
+          type: object
+          nullable: true
+          description: The metadata associated with the interaction
+        model:
+          type: string
+          nullable: true
+          description: The name of the model used for the interaction
+        reference:
+          type: array
+          nullable: true
+          items: 
+            oneOf:
+              - $ref: '#/components/schemas/Document'
+              - type: object
+          description: The list of references associated with the interaction
+        thread_id:
+          type: string
+          description: The ID of the chat thread associated with the interaction
+        timestamp:
+          type: string
+          format: date-time
+          description: The timestamp when the interaction occurred
+        user_credits:
+          type: integer
+          nullable: true
+          description: The number of credits used by the user for the interaction
+          
 
 security:
   - basicAuth: []
@@ -1117,7 +1240,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Chat'
               examples:
                 example-0:
                   summary: Create New Chat (with sp)
@@ -1178,7 +1301,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chat'
               example:
                 - brain_id: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                   chat_id: 94dccfdf-c401-417c-bfcf-07f37f78e2da
@@ -1241,7 +1366,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Chat'
               example:
                 created_on: 1704488059
                 default_options:
@@ -1315,7 +1440,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chat'
               example:
                 - brain_id: null
                   chat_id: 18083f81-d93e-4f98-a377-d1e8af8d40f3
@@ -1384,6 +1511,10 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  message:
+                    type: string
+                    example: Chat thread deleted.
               example:
                 message: Chat thread deleted.
   /chat/get-response:
@@ -1433,7 +1564,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                 $ref: '#/components/schemas/ChatInteraction'
               example:
                 - actor: AI
                   created_at: Mon, 20 May 2024 06:12:02 GMT
@@ -1492,7 +1623,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/ChatInteraction'
+
               example:
                 - actor: USER
                   created_at: Mon, 20 May 2024 06:11:58 GMT
