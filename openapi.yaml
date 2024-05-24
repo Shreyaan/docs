@@ -16,33 +16,47 @@ components:
         active_features:
           type: object
           nullable: true
+          description: Active features of the brain. Currently used internally
         brain_id:
           type: string
+          description: Unique identifier for the brain
         created_on:
           type: number
+          description: Timestamp when the brain was created
         description:
           type: string
+          description: Description of the brain
         document_count:
           type: integer
+          description: Number of documents in the brain
         id:
           type: string
+          description: Unique identifier for the brain (same as brain_id)
         language_code:
           type: string
+          description: Language code of the brain
         metadata_schema:
           type: object
           nullable: true
+          description: Metadata schema for the brain
         org_uuid:
           type: string
+          description: Unique identifier for the organization
         storage_bytes:
           type: integer
+          description: Total storage size of the brain in bytes
         supp_id:
           type: string
+          description: Supplementary identifier for the brain
         title:
           type: string
+          description: Title or name of the brain
         type:
           type: string
+          description: Type of the brain (e.g., unstructured, structured)
         updated_on:
           type: number
+          description: Timestamp when the brain was last updated
 
 security:
   - basicAuth: []
