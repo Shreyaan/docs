@@ -127,14 +127,12 @@ components:
           description: The unique identifier of the chat
         created_at:
           type: string
-
           description: The timestamp when the chat was created
         id:
           type: integer
           description: The unique identifier of the chat record
         last_updated:
           type: string
-
           nullable: true
           description: The timestamp when the chat was last updated
         model:
