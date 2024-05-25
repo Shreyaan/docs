@@ -2226,9 +2226,12 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                url: >-
-                  https://api.notion.com/v1/oauth/authorize?response_type=code&client_id=a96174bc-de34-4892-927b-b7eb234d1794&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2Fintegration%2Fnotion%2Fcallback&state=x6FYlEiFfwvxtuOuuN7oFMjJPOpRBE
+                properties:
+                  url:
+                    type: string
+                    description: URL to connect to the integration
+                    example: https://api.notion.com/v1/oauth/authorize?response_type=code&client_id=a96174bc-de34-4892-927b-b7eb234d1794&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2Fintegration%2Fnotion%2Fcallback&state=x6FYlEiFfwvxtuOuuN7oFMjJPOpRBE
+
   /integration/{integration_name}/disconnect:
     get:
       tags:
@@ -2246,7 +2249,11 @@ paths:
         "200":
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                description: Empty object
+
   /integration/{integration_name}/list:
     get:
       tags:
@@ -2288,35 +2295,35 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-              example:
-                - content: {}
-                  created_at: "2024-05-20T06:19:00.209Z"
-                  id: "65620"
-                  title: Getting started in Confluence
-                  updated_at: "2024-05-20T06:19:00.209Z"
-                  url: >-
-                    https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/pages/65620/Getting+started+in+Confluence
-                - content: {}
-                  created_at: "2024-05-20T06:19:00.612Z"
-                  id: "65621"
-                  title: Overview
-                  updated_at: "2024-05-20T06:19:00.612Z"
-                  url: >-
-                    https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/overview
-                - content: {}
-                  created_at: "2024-05-20T06:19:00.522Z"
-                  id: "98385"
-                  title: My first space Home
-                  updated_at: "2024-05-20T06:19:00.522Z"
-                  url: https://shreyaans20.atlassian.net/wiki/spaces/TEAM/overview
-                - content: {}
-                  created_at: "2024-05-20T06:19:21.046Z"
-                  id: "294933"
-                  title: hello
-                  updated_at: "2024-05-20T06:19:33.999Z"
-                  url: >-
-                    https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/pages/294933/hello
+                type: array
+                description: Array of pages from the integration
+                items:
+                  type: object
+                  properties:
+                    content:
+                      type: object
+                      description: Content of the page
+                    created_at:
+                      type: string
+                      description: Creation timestamp of the page
+                      example: "2024-05-20T06:19:00.209Z"
+                    id:
+                      type: string
+                      description: ID of the page
+                      example: "65620"
+                    title:
+                      type: string
+                      description: Title of the page
+                      example: Getting started in Confluence
+                    updated_at:
+                      type: string
+                      description: Last updated timestamp of the page
+                      example: "2024-05-20T06:19:00.209Z"
+                    url:
+                      type: string
+                      description: URL of the page
+                      example: https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/pages/65620/Getting+started+in+Confluence
+
   /integration/{integration_name}/add:
     post:
       tags:
@@ -2331,8 +2338,10 @@ paths:
               properties:
                 brain_id:
                   type: string
+                  description: ID of the brain to add pages to
                 page_ids:
                   type: array
+                  description: Array of page IDs to add to the brain
                   items:
                     type: string
                     description: An array of page_ids you want to add
@@ -2376,8 +2385,12 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                message: Pages are being added to the brain.
+                properties:
+                  message:
+                    type: string
+                    description: Message indicating the pages are being added to the brain
+                    example: Pages are being added to the brain.
+
   /organisation/:
     get:
       tags:
@@ -2411,13 +2424,38 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                created_at: Thu, 16 May 2024 18:57:16 GMT
-                email: <email>
-                id: 62
-                name: Organization for ___
-                org_name: null
-                org_uuid: 989ad142-ab62-4e6b-92b6-83a25dec3151
-                role: admin
-                token: <invite_token>
-                user_uuid: 6cc35c0a-5095-4677-ac22-843a68138f53
+                properties:
+                  created_at:
+                    type: string
+                    description: Creation timestamp of the organization
+                    example: Thu, 16 May 2024 18:57:16 GMT
+                  email:
+                    type: string
+                    description: Email associated with the organization
+                  id:
+                    type: integer
+                    description: ID of the organization
+                    example: 62
+                  name:
+                    type: string
+                    description: Name of the organization
+                    example: Organization for ___
+                  org_name:
+                    type: string
+                    description: Name of the organization (same as 'name')
+                    nullable: true
+                  org_uuid:
+                    type: string
+                    description: UUID of the organization
+                    example: 989ad142-ab62-4e6b-92b6-83a25dec3151
+                  role:
+                    type: string
+                    description: Role of the user in the organization
+                    example: admin
+                  token:
+                   type: string
+                   description: Invite token for the organization
+                  user_uuid:
+                   type: string
+                   description: UUID of the user
+                   example: 6cc35c0a-5095-4677-ac22-843a68138f53
