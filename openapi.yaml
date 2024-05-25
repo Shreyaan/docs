@@ -177,17 +177,20 @@ components:
         default_options:
           nullable: true
           type: object
+          additionalProperties: true
           properties:
             auto_query_guidance:
               type: string
+              nullable: true
             knowledge_base_ids:
               type: array
+              nullable: true
               items:
                 type: string
             model:
               type: string
+              nullable: true
           description: The default options for the chat
-
     ChatInteraction:
       type: object
       properties:
@@ -234,6 +237,102 @@ components:
           type: integer
           nullable: true
           description: The number of credits used by the user for the interaction
+    ChatbotResponse:
+      type: object
+      properties:
+        api_key:
+          type: string
+          example: 83816958-931c-42c0-9a21-c6f61c7cdcdb
+          description: The API key for the chatbot
+          nullable : true
+        brain_id:
+          type: string
+          example: 37d53982-bf08-4058-88d5-f91df0a7ab41
+          description: The ID of the brain associated with the chatbot
+        created_at:
+          type: string
+          example: "2024-02-18T19:00:11.989503+00:00"
+          description: The creation timestamp of the chatbot
+        id:
+          type: string
+          example: 7a2e792d-cf48-49d2-a36d-186be034a9dc
+          description: The ID of the chatbot
+        name:
+          type: string
+          example: "Chatbot -1"
+          description: The name of the chatbot
+        urls:
+          type: array
+          nullable : true
+          items:
+            type: string
+          example:
+            - "https://byteleap.co"
+            - "https://ayushgoyal.dev"
+          description: An array of URLs associated with the chatbot
+        user_id:
+          type: string
+          example: a7a690e6-2a83-4ec5-8eb2-73b0c1d0aa9c
+          description: The ID of the user who owns the chatbot
+    ChatbotAnalytics:
+      type: object
+      properties:
+        number_of_chats:
+          type: integer
+          example: 1
+          description: The number of chats the chatbot has participated in
+        number_of_messages:
+          type: integer
+          example: 2
+          description: The total number of messages the chatbot has exchanged
+    ChatbotMessages:
+      type: object
+      properties:
+        chat_messages:
+          type: array
+          items:
+            type: object
+            properties:
+              actor:
+                type: string
+                example: USER
+                description: The actor of the message, either USER or AI
+              created_at:
+                type: string
+                example: "2024-05-20T06:46:09.010233+00:00"
+                description: The timestamp when the message was created
+              id:
+                type: integer
+                example: 461
+                description: The ID of the message
+              message:
+                type: string
+                example: hi
+                description: The content of the message
+              reference:
+                type: array
+                nullable: true
+                items:
+                  oneOf:
+                    - $ref: "#/components/schemas/Document"
+                    - type: object
+                description: The list of references associated with the interaction
+              thread_id:
+                type: string
+                example: 7c621be0-96d8-4ecc-9149-74d0ff94f106
+                description: The ID of the thread the message belongs to
+              timestamp:
+                type: string
+                nullable: true
+                example: null
+                description: The timestamp of the message, if available
+    DeleteResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Document deleted successfully.
+          description: A message indicating the result of the delete operation
 
 security:
   - basicAuth: []
@@ -652,11 +751,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Knowledge base deleted.
+                $ref: '#/components/schemas/DeleteResponse'
               example:
                 message: Knowledge base deleted.
   /document/{brain_id}/text:
@@ -1104,11 +1199,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Document deleted successfully.
+                $ref: '#/components/schemas/DeleteResponse'
               example:
                 message: Document deleted successfully.
   /document/{brain_id}/file:
@@ -1389,16 +1480,20 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
               properties:
                 temperature:
                   type: number
                   description: between 1 and 0
+                  nullable : true
                 name:
                   type: string
                   example: Test_chat2
                   description: The updated name of the chat
+                  nullable : true
                 system_message:
                   type: string
+                  nullable : true
               example:
                 temperature: null
                 system_message: test system message
@@ -1506,11 +1601,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Chat thread deleted.
+                $ref: '#/components/schemas/DeleteResponse'
               example:
                 message: Chat thread deleted.
   /chat/get-response:
@@ -1704,7 +1795,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/ChatbotResponse'
               example:
                 - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
@@ -1716,17 +1809,23 @@ paths:
                     - https://ayushgoyal.dev
                   user_id: a7a690e6-2a83-4ec5-8eb2-73b0c1d0aa9c
   /chatbot/list:
-    post:
+    get:
       tags:
         - Chatbot
       summary: List Chatbots
+      parameters:
+        - in: query
+          name: brain_id
+          schema:
+            type: string
+          description: The ID of the brain to filter chatbots
       responses:
         "200":
           description: OK
           headers:
             Server:
               schema:
-                type: number
+                type: string
                 example: Werkzeug/3.0.1 Python/3.9.18
             Date:
               schema:
@@ -1747,7 +1846,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/ChatbotResponse'
               examples:
                 example-0:
                   summary: List All Chatbots for User
@@ -1773,6 +1874,7 @@ paths:
                         - https://byteleap.co
                         - https://ayushgoyal.dev
                       user_id: a7a690e6-2a83-4ec5-8eb2-73b0c1d0aa9c
+
   /chatbot/get:
     post:
       tags:
@@ -1811,7 +1913,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/ChatbotResponse'
               example:
                 api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                 brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
@@ -1860,7 +1962,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/ChatbotAnalytics'
               example:
                 number_of_chats: 1
                 number_of_messages: 2
@@ -1903,7 +2005,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/ChatbotMessages'
               example:
                 chat_messages:
                   - actor: USER
@@ -1931,12 +2033,17 @@ paths:
             schema:
               type: object
               properties:
+                chatbot_id:
+                  type: string
+                  description: The id of the chatbot
                 name:
                   type: string
                   example: "Chatbot -1"
                   description: The name of the chatbot
+                  nullable: true
                 urls:
                   type: array
+                  nullable: true
                   items:
                     type: string
                     example:
@@ -1975,7 +2082,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/ChatbotResponse'
               example:
                 - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
@@ -2024,7 +2133,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/DeleteResponse'
               example:
                 message: Chat bot deleted.
   /chatbot/reset:
@@ -2065,9 +2174,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/ChatbotResponse'
               example:
-                - api_key: fe527e6f-9518-4200-93ef-e082ba2467a5
+                  api_key: fe527e6f-9518-4200-93ef-e082ba2467a5
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
                   created_at: "2024-02-18T19:00:11.989503+00:00"
                   id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
