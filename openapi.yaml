@@ -231,7 +231,6 @@ components:
           description: The ID of the chat thread associated with the interaction
         timestamp:
           type: string
-
           description: The timestamp when the interaction occurred
         user_credits:
           type: integer
@@ -244,7 +243,7 @@ components:
           type: string
           example: 83816958-931c-42c0-9a21-c6f61c7cdcdb
           description: The API key for the chatbot
-          nullable : true
+          nullable: true
         brain_id:
           type: string
           example: 37d53982-bf08-4058-88d5-f91df0a7ab41
@@ -259,16 +258,16 @@ components:
           description: The ID of the chatbot
         name:
           type: string
-          example: "Chatbot -1"
+          example: Chatbot -1
           description: The name of the chatbot
         urls:
           type: array
-          nullable : true
+          nullable: true
           items:
             type: string
           example:
-            - "https://byteleap.co"
-            - "https://ayushgoyal.dev"
+            - https://byteleap.co
+            - https://ayushgoyal.dev
           description: An array of URLs associated with the chatbot
         user_id:
           type: string
@@ -333,7 +332,6 @@ components:
           type: string
           example: Document deleted successfully.
           description: A message indicating the result of the delete operation
-
 security:
   - basicAuth: []
 tags:
@@ -751,7 +749,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteResponse'
+                $ref: "#/components/schemas/DeleteResponse"
               example:
                 message: Knowledge base deleted.
   /document/{brain_id}/text:
@@ -812,7 +810,10 @@ paths:
               example:
                 chunk_header: null
                 content: >-
-                  What is an operating system? An operating system (OS) is the program that, after being initially loaded into the computer by a boot program, manages all of the other application programs in a computer............
+                  What is an operating system? An operating system (OS) is the
+                  program that, after being initially loaded into the computer
+                  by a boot program, manages all of the other application
+                  programs in a computer............
                 created_on: 1715540036
                 description: ""
                 document_type: raw_text
@@ -967,7 +968,10 @@ paths:
                 properties:
                   url:
                     type: string
-                    description: The URL to download the document file. This URL is a pre-signed URL that provides temporary access to the document file hosted on a cloud storage service.
+                    description: >-
+                      The URL to download the document file. This URL is a
+                      pre-signed URL that provides temporary access to the
+                      document file hosted on a cloud storage service.
               example:
                 url: >-
                   https://8d14e75b78613596eb36d95900f46a4e.r2.cloudflarestorage.com/athena/e41bfe56cc6141f0af74a497d18500ec-ReactJSNotesForProfessionals.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8e591b165b9623eef5270c5e16393d0b%2F20240512%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240512T185806Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=56d79bafb1a7102ffaf3820bd505efd78ebd2babe57e96cde7155900a7c43822
@@ -1199,7 +1203,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteResponse'
+                $ref: "#/components/schemas/DeleteResponse"
               example:
                 message: Document deleted successfully.
   /document/{brain_id}/file:
@@ -1485,15 +1489,15 @@ paths:
                 temperature:
                   type: number
                   description: between 1 and 0
-                  nullable : true
+                  nullable: true
                 name:
                   type: string
                   example: Test_chat2
                   description: The updated name of the chat
-                  nullable : true
+                  nullable: true
                 system_message:
                   type: string
-                  nullable : true
+                  nullable: true
               example:
                 temperature: null
                 system_message: test system message
@@ -1601,7 +1605,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteResponse'
+                $ref: "#/components/schemas/DeleteResponse"
               example:
                 message: Chat thread deleted.
   /chat/get-response:
@@ -1713,7 +1717,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/ChatInteraction"
-
               example:
                 - actor: USER
                   created_at: Mon, 20 May 2024 06:11:58 GMT
@@ -1744,19 +1747,19 @@ paths:
               properties:
                 name:
                   type: string
-                  example: "Chatbot -1"
+                  example: Chatbot -1
                   description: The name of the chatbot
                 brain_id:
                   type: string
-                  example: "1f1d7a6a-e45b-4974-a0ba-98935650cb9c"
+                  example: 1f1d7a6a-e45b-4974-a0ba-98935650cb9c
                   description: The ID of the brain associated with the chatbot
                 urls:
                   type: array
                   items:
                     type: string
                     example:
-                      - "https://byteleap.co"
-                      - "https://ayushgoyal.dev"
+                      - https://byteleap.co
+                      - https://ayushgoyal.dev
                     description: An array of URLs associated with the chatbot
               required:
                 - name
@@ -1797,7 +1800,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ChatbotResponse'
+                  $ref: "#/components/schemas/ChatbotResponse"
               example:
                 - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
@@ -1848,7 +1851,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ChatbotResponse'
+                  $ref: "#/components/schemas/ChatbotResponse"
               examples:
                 example-0:
                   summary: List All Chatbots for User
@@ -1874,7 +1877,6 @@ paths:
                         - https://byteleap.co
                         - https://ayushgoyal.dev
                       user_id: a7a690e6-2a83-4ec5-8eb2-73b0c1d0aa9c
-
   /chatbot/get:
     post:
       tags:
@@ -1913,7 +1915,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatbotResponse'
+                $ref: "#/components/schemas/ChatbotResponse"
               example:
                 api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                 brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
@@ -1962,7 +1964,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatbotAnalytics'
+                $ref: "#/components/schemas/ChatbotAnalytics"
               example:
                 number_of_chats: 1
                 number_of_messages: 2
@@ -2005,7 +2007,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatbotMessages'
+                $ref: "#/components/schemas/ChatbotMessages"
               example:
                 chat_messages:
                   - actor: USER
@@ -2038,7 +2040,7 @@ paths:
                   description: The id of the chatbot
                 name:
                   type: string
-                  example: "Chatbot -1"
+                  example: Chatbot -1
                   description: The name of the chatbot
                   nullable: true
                 urls:
@@ -2047,8 +2049,8 @@ paths:
                   items:
                     type: string
                     example:
-                      - "https://byteleap.co"
-                      - "https://ayushgoyal.dev"
+                      - https://byteleap.co
+                      - https://ayushgoyal.dev
                     description: An array of URLs associated with the chatbot
               example:
                 chatbot_id: 1a718a80-71c0-414b-915c-5c5991597ac7
@@ -2084,7 +2086,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ChatbotResponse'
+                  $ref: "#/components/schemas/ChatbotResponse"
               example:
                 - api_key: 83816958-931c-42c0-9a21-c6f61c7cdcdb
                   brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
@@ -2133,7 +2135,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteResponse'
+                $ref: "#/components/schemas/DeleteResponse"
               example:
                 message: Chat bot deleted.
   /chatbot/reset:
@@ -2174,19 +2176,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChatbotResponse'
+                $ref: "#/components/schemas/ChatbotResponse"
               example:
-                  api_key: fe527e6f-9518-4200-93ef-e082ba2467a5
-                  brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
-                  created_at: "2024-02-18T19:00:11.989503+00:00"
-                  id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
-                  name: Updated Name
-                  urls:
-                    - https://byteleap.co
-                    - https://anshgoyal.com
-                  user_id: a7a690e6-2a83-4ec5-8eb2-73b0c1d0aa9c
-  /integration/{integration_name}/connect:
-    get:
+                api_key: fe527e6f-9518-4200-93ef-e082ba2467a5
+                brain_id: 37d53982-bf08-4058-88d5-f91df0a7ab41
+                created_at: "2024-02-18T19:00:11.989503+00:00"
+                id: 7a2e792d-cf48-49d2-a36d-186be034a9dc
+                name: Updated Name
+                urls:
+                  - https://byteleap.co
+                  - https://anshgoyal.com
+                user_id: a7a690e6-2a83-4ec5-8eb2-73b0c1d0aa9c
+  /integration/{integration_name}/connect/:
+    post:
       tags:
         - Integration
       summary: Connect
@@ -2196,7 +2198,9 @@ paths:
           schema:
             type: string
           required: true
-          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
+          description: >-
+            Currently supported integrations are "notion" and "confluence". More
+            integrations will be added in the future.
           example: notion
       responses:
         "200":
@@ -2230,10 +2234,10 @@ paths:
                   url:
                     type: string
                     description: URL to connect to the integration
-                    example: https://api.notion.com/v1/oauth/authorize?response_type=code&client_id=a96174bc-de34-4892-927b-b7eb234d1794&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2Fintegration%2Fnotion%2Fcallback&state=x6FYlEiFfwvxtuOuuN7oFMjJPOpRBE
-
-  /integration/{integration_name}/disconnect:
-    get:
+                    example: >-
+                      https://api.notion.com/v1/oauth/authorize?response_type=code&client_id=a96174bc-de34-4892-927b-b7eb234d1794&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2Fintegration%2Fnotion%2Fcallback&state=x6FYlEiFfwvxtuOuuN7oFMjJPOpRBE
+  /integration/{integration_name}/disconnect/:
+    post:
       tags:
         - Integration
       summary: Disconnect
@@ -2243,7 +2247,9 @@ paths:
           schema:
             type: string
           required: true
-          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
+          description: >-
+            Currently supported integrations are "notion" and "confluence". More
+            integrations will be added in the future.
           example: notion
       responses:
         "200":
@@ -2253,7 +2259,6 @@ paths:
               schema:
                 type: object
                 description: Empty object
-
   /integration/{integration_name}/list:
     get:
       tags:
@@ -2266,7 +2271,9 @@ paths:
           schema:
             type: string
           required: true
-          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
+          description: >-
+            Currently supported integrations are "notion" and "confluence". More
+            integrations will be added in the future.
           example: confluence
       responses:
         "200":
@@ -2322,8 +2329,8 @@ paths:
                     url:
                       type: string
                       description: URL of the page
-                      example: https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/pages/65620/Getting+started+in+Confluence
-
+                      example: >-
+                        https://shreyaans20.atlassian.net/wiki/spaces/~712020b4e5987a0eaa4fae8878f723efab571b/pages/65620/Getting+started+in+Confluence
   /integration/{integration_name}/add:
     post:
       tags:
@@ -2355,7 +2362,9 @@ paths:
           schema:
             type: string
           required: true
-          description: Currently supported integrations are "notion" and "confluence". More integrations will be added in the future.
+          description: >-
+            Currently supported integrations are "notion" and "confluence". More
+            integrations will be added in the future.
           example: notion
       responses:
         "200":
@@ -2390,7 +2399,6 @@ paths:
                     type: string
                     description: Message indicating the pages are being added to the brain
                     example: Pages are being added to the brain.
-
   /organisation/:
     get:
       tags:
@@ -2453,9 +2461,9 @@ paths:
                     description: Role of the user in the organization
                     example: admin
                   token:
-                   type: string
-                   description: Invite token for the organization
+                    type: string
+                    description: Invite token for the organization
                   user_uuid:
-                   type: string
-                   description: UUID of the user
-                   example: 6cc35c0a-5095-4677-ac22-843a68138f53
+                    type: string
+                    description: UUID of the user
+                    example: 6cc35c0a-5095-4677-ac22-843a68138f53
